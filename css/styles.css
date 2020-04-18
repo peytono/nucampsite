@@ -35,3 +35,7 @@ header h2 {
 .navbar {
     background-color: #901CAD;
 }
+
+.headerReserve {
+    padding: .75rem .75rem;
+}

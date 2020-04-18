@@ -5,21 +5,17 @@
     <!-- Required meta tags always come first -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-
     <!-- Additional CSS must be placed after Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
     <link rel="stylesheet" href="css/styles.css" />
 
-    <title> NuCamp: A Better Way To Camp </title>
+    <title>NuCamp: A Better Way To Camp </title>
 </head>
-
 <body>
-
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
@@ -30,13 +26,18 @@
                     <h1> NuCamp </h1>
                     <h2> a better way to camp </h2>
                 </div>
+                <div class="col-md-4 col-xl-2 mt-4">
+                    <a role="button" class="btn btn-info btn-lg" href="#reserveForm">Reserve Campsite</a>
+                </div>
             </div>
         </div>
     </header>
-
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30" /></a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+                <span class="navbar-toggler-icon"> </span>
+            </button>
             <div class="collapse navbar-collapse" id="nucampNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item active"> <a class="nav-link" href="#"> <i class="fa fa-home fa-lg"> </i> Home</a> </li>
@@ -46,13 +47,7 @@
                 </ul>
             </div>
         </div>
-   
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#nucampNavbar">
-            <span class="navbar-toggler-icon"> </span>
-        </button>
-
     </nav>
-
     <div class="container">
         <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
@@ -68,24 +63,27 @@
                 </div>
             </div>
         </div>
-
         <div class="row row-content align-items-center">
             <div class="col-sm-4 col-md-3">
-              <h2>Featured Campsites </h2>
+                <h2>Featured Campsites </h2>
             </div>
             <div class="col">
-              <h3>React Lake Campground </h3>
-              <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers. </p>
+                <div class="media">
+                    <div class="media-body align-self-center">
+                        <h3>React Lake Campground </h3>
+                        <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers. </p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="React Lake"/>
+                </div>
             </div>
         </div>
-
         <div class="row row-content align-items-center">
             <div class="col-sm-4 order-sm-last col-md-3">
               <h2 class="text-sm-right">Our Community Partners </h2>
             </div>
             <div class="col">
                 <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters">
+                    <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
                     <div class="media-body align-self-center">
                         <h3>Bootstrap Outfitters</h3>
                             <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with the gear you need at prices you can't beat.</p>
@@ -93,8 +91,43 @@
                 </div>
             </div>
         </div>
+        <div class="row row-content align-items-center">
+            <div class="col-sm-6 mx-auto">
+                <div class="card">
+                    <h3 class="card-header bg-info text-white headerReserve">Reserve a Campsite</h3>
+                    <div class="card-body">
+                        <form id="reserveForm">
+                            <div class="row form-group">
+                                <label class="col-sm-6 col-form-label"for="numCampers" >Number of Campers</label>
+                                <div class="col">
+                                    <select class="form-control" name="numCampers" id="numCampers">
+                                        <option selected>Select...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-sm-6 col-form-label" for="date">Date</label>
+                                <div class="col">
+                                    <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-primary" type="submit">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div> 
-
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -114,20 +147,16 @@
                     <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"> <i class="fa fa-twitter"> </i> </a>
                     <a class="btn btn-social-icon btn-google" href="http://youtube.com/"> <i class="fa fa-youtube"> </i> </a>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 text-center">
                     <a role="button" class="btn btn-link" href="tel:+12065551234"> <i class="fa fa-phone"> </i> 1-206-555-1234 </a> <br />
                     <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"> <i class="fa fa-envelope-o"> </i> campsites@nucamp.co </a>
                 </div>
             </div>
         </div>
     </footer>
-    
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"> </script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"> </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"> </script>
-
-
 </body>
-
 </html>
