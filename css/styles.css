@@ -39,3 +39,9 @@ header h2 {
 .headerReserve {
     padding: .75rem .75rem;
 }
+
+.tab-content {
+    border: 1px solid #DDD;
+    border-top: none;
+    padding: 10px;
+}
